@@ -1,5 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('./controller');
+// const controller = require('./controller');
+const formRouter = require('./form');
 
-// router.get('/all-forms', controller.getStockReport);
+router.use('/form', formRouter);
+
+module.exports = router;
+
+
