@@ -8,4 +8,4 @@ myDocDB.on('connected', () => {
 });
 
 
-module.exports = { myDocDB};
+module.exports = { myDocDB };

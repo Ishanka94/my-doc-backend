@@ -3,34 +3,18 @@ const Schema = mongoose.Schema;
 const conn = require('../config/db-connect');
 
 const FormSchema = new Schema({
-    buyerId: {
-        type: Schema.Types.String,
-        require: true,
-    },
     name: {
         type: Schema.Types.String,
         require: true,
     },
-    address1: {
-        type: Schema.Types.String,
-        require: true,
-    },
-    address2: {
-        type: Schema.Types.String,
-        require: true,
-    },
-    address3: {
+    address: {
         type: Schema.Types.String,
         require: true,
     },
     contact: {
         type: Schema.Types.String,
         require: true,
-    },
-    deliveryDate: {
-        type: Schema.Types.Date,
-        require: true,
     }
-});
+}, {collection : 'Form'});
 
 module.exports = Form = conn.myDocDB.model('Form', FormSchema);
