@@ -14,6 +14,10 @@ const FormSchema = new Schema({
     contact: {
         type: Schema.Types.String,
         require: true,
+    },
+    childFormRef: {
+        type: Schema.Types.String,
+        require: true,
     }
 }, {collection : 'Form'});
 

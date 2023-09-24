@@ -1,34 +1,31 @@
 const Form = require('../../models/form');
+const Flow = require('../../models/flow');
+const sendResponse = require('../../utils/response');
+const httpStatus = require('http-status');
 
 const getAllForms= async (req, res) => {
     const allForms = await Form.find();
     console.log(allForms);
-    // logger.log(`[REPORT][REQUEST] Get stock report request received`);
-    // const [err, reportRes] = await to(reportService.getStockReport());
-    // if (err) {
-    //     const { statusCode } = err;
-    //     logger.log(`[REPORT][RESPONSE][ERROR] Error while getting stock report | statusCode: ${statusCode}`);
-    //     return res.status(statusCode).json(err);
-    // }
-    // const { data } = reportRes;
-    // logger.log(`[REPORT][RESPONSE][SUCCESS] stock report received successfully | data: ${JSON.stringify(data?data:'')}`);
-    // return res.status(httpStatus.OK).json(data);
 }
 
 const createForm = async (req, res) => {
     // logger.log(`[PRODUCT][REQUEST] create category request received|data:${JSON.stringify(req.body?req.body:'')}`);
     const FormData = Form(req.body);
     await FormData.save();
-    // const saveResult = await to(FormData.save(), res);
-    // if (saveResult) {
-    //     logger.log(`[PRODUCT][RESPONSE][SUCCESS] category created successfully`);
-    //     return sendResponse(res, httpStatus.OK, saveResult);
-    // }
-    // logger.log(`[PRODUCT][RESPONSE][ERROR] Error while creating category`); 
-    // sendErrorResponse(res, httpStatus.INTERNAL_SERVER_ERROR,  'Something went wrong, please try again');
 };
+
+const getFormByPath= async (req, res) => {
+    let childForm;
+    // const allForms = await Flow.find({$and: [{parentFormId : 'F1'}, {path: 'a.b.c'}]}).populate({path: 'childFormRef', model: Form});
+    const filteredForms = await Flow.find({$and: [{parentFormId : req?.body?.parentFormId}, {path: req?.body?.path}]}).populate({path: 'childFormRef', model: Form});
+    if (filteredForms && filteredForms.length > 0) {
+        childForm = filteredForms[0].childFormRef;
+    }
+    return sendResponse(res, httpStatus.OK , childForm);
+}
 
 module.exports = {
     getAllForms,
-    createForm
+    createForm,
+    getFormByPath
 }
