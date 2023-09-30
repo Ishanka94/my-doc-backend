@@ -5,14 +5,15 @@ const httpStatus = require('http-status');
 
 const getAllForms= async (req, res) => {
     const allForms = await Form.find();
-    console.log(allForms);
+    return sendResponse(res, httpStatus.OK , allForms);
 }
 
 const createForm = async (req, res) => {
-    // logger.log(`[PRODUCT][REQUEST] create category request received|data:${JSON.stringify(req.body?req.body:'')}`);
     const FormData = Form(req.body);
-    await FormData.save();
-};
+    const savedData = await FormData.save();
+    if (savedData) {
+        return sendResponse(res, httpStatus.OK , savedData);
+    }};
 
 const getFormByPath= async (req, res) => {
     let childForm;

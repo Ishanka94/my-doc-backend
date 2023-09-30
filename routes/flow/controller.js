@@ -3,8 +3,8 @@ const sendResponse = require('../../utils/response');
 const httpStatus = require('http-status');
 
 const getAllFlows= async (req, res) => {
-    const allForms = await Flow.find();
-    return sendResponse(res, httpStatus.OK , allForms);
+    const allFlows = await Flow.find();
+    return sendResponse(res, httpStatus.OK , allFlows);
 }
 
 const createFlow = async (req, res) => {
