@@ -1,0 +1,138 @@
+{
+    "fields": [
+      {
+        "label": "TP-ABCDE",
+        "type": "headMedium",
+        "required": true,
+        "key": "initialHeadline"
+      },
+      {
+        "label": "",
+        "type": "divider",
+        "required": false,
+        "key": "devider1"
+      },
+      {
+        "label": " eye ball triage or equipment triage (Acute stream / fast track)",
+        "type": "bodyMedium",
+        "bold": "Triage",
+        "required": true,
+        "key": "initialHeadline"
+      },
+      {
+        "label": "",
+        "type": "divider",
+        "required": false,
+        "key": "devider1"
+      },
+      {
+        "label": " Patient safety and Healthcare provider safety – wear gloves, masks\n",
+        "type": "bodyMedium",
+        "bold": "Danger,",
+        "required": true,
+        "key": "initialHeadline"
+      },
+      {
+        "label": "",
+        "type": "divider",
+        "required": false,
+        "key": "devider2"
+      },
+      {
+        "label": "",
+        "type": "bodyMedium",
+        "bold": "Response",
+        "required": true,
+        "key": "initialHeadline"
+      },
+      {
+        "label": "",
+        "type": "divider",
+        "required": false,
+        "key": "devider3"
+      },
+      {
+        "label": "sadIconBtn",
+        "type": "sadIconBtn",
+        "required": true,
+        "key": "danger"
+      },
+      {
+        "label": "",
+        "type": "divider",
+        "required": false,
+        "key": "devider4"
+      },
+      {
+        "label": "",
+        "type": "divider",
+        "required": false,
+        "key": "devider2"
+      },
+      {
+        "label": "",
+        "type": "bodyMedium",
+        "bold": "Shout for help",
+        "required": true,
+        "key": "initialHeadline"
+      },
+      {
+        "label": "",
+        "type": "divider",
+        "required": false,
+        "key": "devider2"
+      },
+      {
+        "label": "Keep airway patent with chin lift, head tilt, jaw thrust",
+        "type": "bodyMedium",
+        "bold": "Airway -",
+        "required": true,
+        "key": "initialHeadline"
+      },
+      {
+        "label": "",
+        "type": "divider",
+        "required": false,
+        "key": "devider2"
+      },
+      {
+        "label": "",
+        "type": "bodyMedium",
+        "bold": "Breathing -",
+        "required": true,
+        "key": "initialHeadline"
+      },
+      {
+        "label": "sadIconBtn",
+        "type": "sadIconBtn",
+        "required": true,
+        "key": "danger"
+      },
+      {
+        "label": "",
+        "type": "divider",
+        "required": false,
+        "key": "devider2"
+      },
+      {
+        "label": "",
+        "type": "bodyMedium",
+        "bold": "Central pulse -",
+        "required": true,
+        "key": "initialHeadline"
+      },
+      {
+        "label": "sadIconBtn",
+        "type": "sadIconBtn",
+        "required": true,
+        "key": "danger"
+      },
+      {
+        "label": "",
+        "type": "divider",
+        "required": false,
+        "key": "devider2"
+      }
+    ]
+  
+  }
