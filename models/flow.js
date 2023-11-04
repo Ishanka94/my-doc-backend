@@ -16,7 +16,7 @@ const FlowSchema = new Schema({
         // require: true,
     },
     parentFormId: {
-        type: Schema.Types.String,
+        type: Schema.Types.ObjectId,
         // require: true,
     },
     path: {
