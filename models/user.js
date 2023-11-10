@@ -1,0 +1,32 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt');
+const conn = require('../config/db-connect');
+
+const UserSchema = new Schema({
+    username: {
+        type: Schema.Types.String,
+        require: true,
+    },
+    password: {
+        type: Schema.Types.String,
+        require: true,
+    }
+}, {collection : 'User'});
+
+// Hash the user's password before saving it
+UserSchema.pre('save', async function (next) {
+    const user = this;
+    if (!user.isModified('password')) return next();
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(user.password, salt);
+    user.password = hash;
+    next();
+  });
+
+// Compare user's entered password with the stored hash
+UserSchema.methods.comparePassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+};
+
+module.exports = User = conn.myDocDB.model('User', UserSchema);

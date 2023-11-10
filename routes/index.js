@@ -4,10 +4,12 @@ const router = express.Router();
 const formRouter = require('./form');
 const flowRouter = require('./flow');
 const appInfoRouter = require('./appInfo');
+const authRouter = require('./auth');
 
 router.use('/form', formRouter);
 router.use('/flow', flowRouter);
 router.use('/appInfo', appInfoRouter);
+router.use('/auth', authRouter);
 
 module.exports = router;
 
