@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const conn = require('../config/db-connect');
 
 const UserSchema = new Schema({
-    username: {
+    email: {
         type: Schema.Types.String,
         require: true,
     },

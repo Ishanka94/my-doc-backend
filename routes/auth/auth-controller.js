@@ -6,8 +6,8 @@ const httpStatus = require('http-status');
 
 const loginUser = async (req, res) => {
   try {
-    const { username, password } = req.body;
-    const user = await User.findOne({ username });
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
     if (!user) {
       return res.status(401).json({ error: 'Authentication failed' });
     }
@@ -16,7 +16,7 @@ const loginUser = async (req, res) => {
       return res.status(401).json({ error: 'Authentication failed' });
     }
     const token = jwt.sign({ userId: user._id }, secretKey, { expiresIn: '1h' });
-    res.json({ token });
+    res.json({ token, user });
   } catch (error) {
     res.status(500).json({ error: 'Authentication failed' });
   }
