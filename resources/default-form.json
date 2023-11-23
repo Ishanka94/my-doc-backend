@@ -1,138 +1,374 @@
-{
+[
+  {
     "fields": [
       {
         "label": "TP-ABCDE",
         "type": "headMedium",
         "required": true,
-        "key": "initialHeadline"
+        "key": "1"
       },
       {
         "label": "",
         "type": "divider",
         "required": false,
-        "key": "devider1"
+        "key": "2"
       },
       {
         "label": " eye ball triage or equipment triage (Acute stream / fast track)",
         "type": "bodyMedium",
-        "bold": "Triage",
+        "bold": "1) Triage",
         "required": true,
-        "key": "initialHeadline"
+        "key": "3"
       },
       {
         "label": "",
         "type": "divider",
         "required": false,
-        "key": "devider1"
+        "key": "4"
       },
       {
         "label": " Patient safety and Healthcare provider safety – wear gloves, masks\n",
         "type": "bodyMedium",
-        "bold": "Danger,",
+        "bold": "2) Danger,",
         "required": true,
-        "key": "initialHeadline"
+        "key": "5"
       },
       {
         "label": "",
         "type": "divider",
         "required": false,
-        "key": "devider2"
+        "key": "6"
       },
       {
-        "label": "",
+        "label": " Does patient give any response? if not move to next step",
         "type": "bodyMedium",
-        "bold": "Response",
+        "bold": "3) Response-",
         "required": true,
-        "key": "initialHeadline"
-      },
-      {
-        "label": "",
-        "type": "divider",
-        "required": false,
-        "key": "devider3"
+        "key": "7"
       },
       {
         "label": "sadIconBtn",
         "type": "sadIconBtn",
         "required": true,
-        "key": "danger"
+        "key": "8"
       },
       {
         "label": "",
         "type": "divider",
         "required": false,
-        "key": "devider4"
-      },
-      {
-        "label": "",
-        "type": "divider",
-        "required": false,
-        "key": "devider2"
+        "key": "9"
       },
       {
         "label": "",
         "type": "bodyMedium",
-        "bold": "Shout for help",
+        "bold": "4) Shout for help",
         "required": true,
-        "key": "initialHeadline"
+        "key": "10"
       },
       {
         "label": "",
         "type": "divider",
         "required": false,
-        "key": "devider2"
+        "key": "11"
       },
       {
         "label": "Keep airway patent with chin lift, head tilt, jaw thrust",
         "type": "bodyMedium",
-        "bold": "Airway -",
+        "bold": "6) Airway -",
         "required": true,
-        "key": "initialHeadline"
+        "key": "12"
       },
       {
         "label": "",
         "type": "divider",
         "required": false,
-        "key": "devider2"
+        "key": "13"
       },
       {
-        "label": "",
+        "label": "Does patient have breathing? if not move to next step",
         "type": "bodyMedium",
-        "bold": "Breathing -",
+        "bold": "7) Breathing -",
         "required": true,
-        "key": "initialHeadline"
+        "key": "14"
       },
       {
         "label": "sadIconBtn",
         "type": "sadIconBtn",
         "required": true,
-        "key": "danger"
+        "key": "15"
       },
       {
         "label": "",
         "type": "divider",
         "required": false,
-        "key": "devider2"
+        "key": "16"
       },
       {
         "label": "",
         "type": "bodyMedium",
-        "bold": "Central pulse -",
+        "bold": "8) Central pulse -",
         "required": true,
-        "key": "initialHeadline"
+        "key": "17"
       },
       {
         "label": "sadIconBtn",
         "type": "sadIconBtn",
         "required": true,
-        "key": "danger"
+        "key": "18"
       },
       {
         "label": "",
         "type": "divider",
         "required": false,
-        "key": "devider2"
+        "key": "19"
       }
     ]
+  },
+  {
+    "fields": [
+      {
+        "label": "Critical Ill.",
+        "type": "headerText",
+        "required": true,
+        "key": "1"
+      },
+      {
+        "label": "Identification of a cardiac arrest victim includes assuring a   patient is unresponsive, without central pulses and not \u2028breathing normally",
+        "type": "Paragraph",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      },
+      {
+        "label": "Critical Ill Card",
+        "type": "buttonCard",
+        "bold": "",
+        "required": true,
+        "key": "3",
+        "items": [
   
+          {
+            "label": "Complete Obstruction",
+            "type": "largeButton",
+            "icon": "access-time-filled",
+            "required": true,
+            "key": "18"
+          },
+          {
+            "label": "Partially Obstruction",
+            "type": "largeButton",
+            "icon": "running-with-errors",
+            "required": true,
+            "key": "19"
+          },
+          {
+            "label": "Patent",
+            "type": "largeButton",
+            "icon": "heart-broken",
+            "required": true,
+            "key": "20"
+          }
+        ]
+      },
+      {
+        "label": "A",
+        "type": "backgroundText",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      }
+    ]
+  },
+  {
+    "fields": [
+      {
+        "label": "Circulation",
+        "type": "headerText",
+        "required": true,
+        "key": "1"
+      },
+      {
+        "label": "1) Pulse Rate",
+        "type": "labelLarge",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      },
+      {
+        "label": "",
+        "type": "segmented",
+        "key": "2",
+        "options": [
+          { "value": "60>", "label": "60>" },
+          {
+            "value": "60-100",
+            "label": "60-100"
+          },
+  
+          {
+            "value": "100<",
+            "label": "100<"
+          }
+        ]
+      },
+      {
+        "label": "2) Blood Pressure",
+        "type": "labelLarge",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      },
+      {
+        "label": "",
+        "type": "segmented",
+        "key": "3",
+        "options": [
+          { "value": "61>", "label": "61>" },
+          {
+            "value": "60-100",
+            "label": "60-100"
+          },
+  
+          {
+            "value": "100<",
+            "label": "100<"
+          }
+        ]
+      },
+      {
+        "label": "CiturationView",
+        "type": "nextButton",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      },
+      {
+        "label": "A",
+        "type": "backgroundText",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      }
+    ]
+  },
+  {
+    "fields": [
+      {
+        "label": "Complete Obstruction",
+        "type": "headerText",
+        "required": true,
+        "key": "1"
+      },
+      {
+        "label": "Clear the airway and apply basic airway manures and  adjuncts",
+        "type": "Paragraph",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      },
+      {
+        "label": "",
+        "type": "nextButton",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      },
+      {
+        "label": "A",
+        "type": "backgroundText",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      }
+    ]
+  },
+  {
+    "fields": [
+      {
+        "label": "Breathing",
+        "type": "headerText",
+        "required": true,
+        "key": "1"
+      },
+      {
+        "label": "1) Respiratory Rate",
+        "type": "labelLarge",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      },
+      {
+        "label": "",
+        "type": "segmented",
+        "options": [
+          {
+            "value": "12>",
+            "label": "RR Low 12<"
+          },
+          { "value": "normal", "label": "RR Normal" },
+          {
+            "value": "20<",
+            "label": "RR High 20<"
+          }
+        ]
+      },
+      {
+        "label": "2) Oxculation",
+        "type": "labelLarge",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      },
+      {
+        "label": "Crapitation",
+        "type": "checkbox",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      },
+      {
+        "label": "Broncai",
+        "type": "checkbox",
+        "bold": "",
+        "required": true,
+        "key": "4"
+      },
+      {
+        "label": "3) Caturation",
+        "type": "labelLarge",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      },
+      {
+        "label": "",
+        "type": "segmented",
+        "options": [
+          {
+            "value": "94<=",
+            "label": "94<="
+          },
+  
+          {
+            "value": "94>",
+            "label": "94>"
+          }
+        ]
+      },
+      {
+        "label": "CiturationView",
+        "type": "nextButton",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      },
+      {
+        "label": "A",
+        "type": "backgroundText",
+        "bold": "",
+        "required": true,
+        "key": "3"
+      }
+    ]
   }
+]
