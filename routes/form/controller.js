@@ -21,8 +21,9 @@ const getFormByPath= async (req, res) => {
     if (!req?.body?.parentFormId) {
         const defFormPath = process.env.DEFAULT_FORM_PATH;
         filteredForms = await Flow.find({path: defFormPath}).populate({path: 'childFormRef', model: Form});
+    } else {
+        filteredForms = await Flow.find({$and: [{parentFormId : req?.body?.parentFormId}, {path: req?.body?.path}]}).populate({path: 'childFormRef', model: Form});
     }
-    filteredForms = await Flow.find({$and: [{parentFormId : req?.body?.parentFormId}, {path: req?.body?.path}]}).populate({path: 'childFormRef', model: Form});
     if (filteredForms && filteredForms.length > 0) {
         childForm = filteredForms[0].childFormRef;
     }
