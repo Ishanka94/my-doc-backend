@@ -14,11 +14,14 @@ const FormSchema = new Schema({
         type: Schema.Types.String,
     },
     formType: {
-        type: Schema.Types.String,   
+        type: Schema.Types.String,
     },
     fields: {
         type: Schema.Types.Array,
         require: true,
+    },
+    cardiacArrest:{
+        type:Schema.Types.Boolean,
     },
     status: {
         type: Schema.Types.String,

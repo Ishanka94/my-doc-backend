@@ -1,5 +1,5 @@
 # Use a slim Node.js image as the base image
-FROM node:18-alpine
+FROM node:14-slim
 
 # Create a working directory in the container
 WORKDIR /app

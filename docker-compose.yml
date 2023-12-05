@@ -19,6 +19,6 @@ services:
     image: mongo:4.4
     container_name: mongodb
     ports:
-        - "27018:27017"
+        - "19017:27017"
     volumes:
       - ./data:/data/db
