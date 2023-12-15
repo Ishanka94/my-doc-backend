@@ -21,6 +21,9 @@ const insertInitialFormData = async (form) => {
             console.log('Inserting initial form data');
             formList.forEach(async formDat => {
                 try {
+                    formDat.fields.forEach((item, index) => {
+                      item['key'] = 'f_' + index;
+                    })
                     const FormData = form(formDat);
                     const savedData = await FormData.save();
                     console.log('Default form data has been saved to the DB');

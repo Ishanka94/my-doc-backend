@@ -9,11 +9,16 @@ const getAllForms= async (req, res) => {
 }
 
 const createForm = async (req, res) => {
+    const formFields = req?.body?.fields;
+    formFields.forEach((item, index) => {
+        item['key'] = 'f_' + index;
+    });
     const FormData = Form(req.body);
     const savedData = await FormData.save();
     if (savedData) {
         return sendResponse(res, httpStatus.OK , savedData);
-    }};
+    }
+};
 
 const getFormByPath= async (req, res) => {
     let childForm;

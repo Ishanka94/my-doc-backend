@@ -35,6 +35,6 @@ const FormSchema = new Schema({
 
 const Form = conn.myDocDB.model('Form', FormSchema);
 
-// initialDbSave.insertInitialFormData(Form);
+initialDbSave.insertInitialFormData(Form);
 
 module.exports = Form;
