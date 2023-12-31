@@ -30,4 +30,11 @@ const registerUser = async (req, res) => {
   }
 };
 
-module.exports = { loginUser, registerUser };
+const updateUser = async (req, res) => {
+  const updatedUser = await User.findOneAndUpdate({doctorId: req.body.doctorId}, req.body, {new: true});
+  if (updatedUser) {
+      return sendResponse(res, httpStatus.OK , updatedUser);
+  }
+};
+
+module.exports = { loginUser, registerUser, updateUser };

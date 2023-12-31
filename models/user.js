@@ -2,15 +2,33 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 const conn = require('../config/db-connect');
+const userStatus = require('../constants/user-status');
 
 const UserSchema = new Schema({
+    doctorId: {
+        type: Schema.Types.String,
+    },
+    doctorName: {
+        type: Schema.Types.String,
+    },
+    status: {
+        type: Schema.Types.String,
+        default: userStatus.PENDING_APPROVAL,
+    },
+    attachment: {
+        type: Schema.Types.String,
+    },
+    nic: {
+        type: Schema.Types.String,
+    },
+    contact: {
+        type: Schema.Types.String,
+    },
     email: {
         type: Schema.Types.String,
-        require: true,
     },
     password: {
         type: Schema.Types.String,
-        require: true,
     }
 }, {collection : 'User'});
 
