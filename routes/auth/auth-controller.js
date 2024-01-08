@@ -37,4 +37,18 @@ const updateUser = async (req, res) => {
   }
 };
 
-module.exports = { loginUser, registerUser, updateUser };
+const getAllUsers= async (req, res) => {
+  let pageSize, skipCount;
+  const query = {};
+  if (req.query) {
+    pageSize = req.query.limit;
+    skipCount = req.query.page * pageSize
+  }
+  const allUsers = await User.find().limit(pageSize).skip(skipCount);
+  const total = await User.countDocuments(query);
+
+  return sendResponse(res, httpStatus.OK , {allUsers, total});
+}
+
+
+module.exports = { loginUser, registerUser, updateUser, getAllUsers };
